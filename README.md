@@ -12,4 +12,4 @@ Numero Tres
 -Some bit manipulation
 
 Numero Cuatro
--TBA
+-Creating a virtual environment, dealing with class interaction mostly
