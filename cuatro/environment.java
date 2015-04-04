@@ -7,38 +7,51 @@ public class environment
         //Carnivore lion = new Carnivore();
 
         //uninitialized chars are NULL
-        char[][] field = new char[5][5];
+        char[][] field = new char[16][16];
 
         //filling the field
-        for(int i=0; i<5; i++)
+        for(int i=0; i<16; i++)
         {
-            for(int j=0; j<5; j++)
+            for(int j=0; j<16; j++)
             {
                 field[i][j] = '.'; //dots are grass
             }
         }
 
-        //change the field
-        //field[0][0] = lion.getSymbol();
 
-        //array of carnivores
-        Carnivore[] c_array = new Carnivore[6];
+        //getCarnivore(field, 10);
+        Carnivore[] c_array = new Carnivore[10];
+        getCarnivore(field, c_array);
 
-        for(int i=0; i<c_array.length; i++)
-        {
-            c_array[i] = new Carnivore();
-            int x_cord = c_array[i].getX();
-            int y_cord = c_array[i].getY();
-            field[x_cord][y_cord] = c_array[i].getSymbol();
-        }
+        System.out.println();
+
+        // Herbivore[] h_array = new Herbivore[6];
+        //
+        // for(int j=0; j<h_array.length; j++)
+        // {
+        //     h_array[j] = new Herbivore();
+        //     int x_cord = h_array[j].getX();
+        //     int y_cord = h_array[j].getY();
+        //
+        //     //while loop, to prevent overlapping
+        //     while(field[x_cord][y_cord] != '.')
+        //     {
+        //         x_cord = h_array[j].getX();
+        //         y_cord = h_array[j].getY();
+        //
+        //     }
+        //
+        //     //place only empty place
+        //     field[x_cord][y_cord] = h_array[j].getSymbol();
+        // }
 
 
 
 
         //print the field to see result again
-        for(int i=0; i<5; i++)
+        for(int i=0; i<16; i++)
         {
-            for(int j=0; j<5; j++)
+            for(int j=0; j<16; j++)
             {
                 System.out.print(field[i][j] + " ");
             }
@@ -48,9 +61,32 @@ public class environment
 
     }
 
-    public static int rand_place()
+
+    //methods
+
+    public static void getCarnivore(char[][] matrix, Carnivore[] carnivores)
     {
-        return ((int)(Math.random() * 5));
+
+        for(int i=0; i<carnivores.length; i++)
+        {
+            carnivores[i] = new Carnivore();
+            int x_cord = carnivores[i].getX();
+            int y_cord = carnivores[i].getY();
+
+            //while loop, to prevent overlapping
+            while(matrix[x_cord][y_cord] != '.')
+            {
+                x_cord = carnivores[i].getX();
+                y_cord = carnivores[i].getY();
+
+            }
+
+            //place only empty place
+            matrix[x_cord][y_cord] = carnivores[i].getSymbol();
+        }
 
     }
+
+
+
 }

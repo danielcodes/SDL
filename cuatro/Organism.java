@@ -14,7 +14,7 @@ public class Organism
     //to create positioning
     public int get_rand()
     {
-        return ((int)(Math.random() * 5));
+        return ((int)(Math.random() * 16));
     }
 
 

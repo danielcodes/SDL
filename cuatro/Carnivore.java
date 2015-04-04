@@ -6,7 +6,6 @@ public class Carnivore extends Organism
 
     public Carnivore()
     {
-        System.out.println("NEW CARNIVORE");
         this.x_cord = get_rand();
         this.y_cord = get_rand();
     }
