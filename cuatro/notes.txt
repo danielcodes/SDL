@@ -1,0 +1,17 @@
+Some insight on the project
+
+Virtual Environment
+-a 2D plane, 32x32
+-four types of objects, herbivore, carnivore, plant and obstacles
+-program runs, # of objects of each type
+-herbivore eats plants, carnivore eats herbivore
+-animals and plants have age, only animals have energy
+-can die if there isn't enough energy
+-Iterate the program, so that animals move randomnly
+until they come within a certain radius of food, based on their energy they eat
+-plants grow randomnly, animals can give birth within given age and energy
+-put 30 iterations of the life cygle
+
+ISSUS TO TAKE CARE OF
+-putting objects randomnly in the grid
+-create a "grass" default
