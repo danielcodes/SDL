@@ -20,8 +20,10 @@ public class environment
 
 
         //getCarnivore(field, 10);
-        Carnivore[] c_array = new Carnivore[10];
+        Carnivore[] c_array = new Carnivore[3];
         getCarnivore(field, c_array);
+
+
 
         System.out.println();
 
@@ -47,6 +49,21 @@ public class environment
 
 
 
+
+        //print the field to see result again
+        for(int i=0; i<16; i++)
+        {
+            for(int j=0; j<16; j++)
+            {
+                System.out.print(field[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        //test movement here
+        c_array[1].move(field);
 
         //print the field to see result again
         for(int i=0; i<16; i++)

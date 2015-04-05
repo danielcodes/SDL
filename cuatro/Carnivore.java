@@ -26,5 +26,17 @@ public class Carnivore extends Organism
         return 'C';
     }
 
+    //movement should be randomized
+    //create a radius
+    public void move(char[][] matrix)
+    {
+        //clear current space
+        matrix[this.x_cord][this.y_cord] = '.';
+
+        //reposition symbol
+        this.y_cord = this.y_cord + 1;
+        matrix[this.x_cord][this.y_cord] = getSymbol();
+    }
+
 
 }
