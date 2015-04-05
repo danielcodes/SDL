@@ -17,5 +17,7 @@ public class Organism
         return ((int)(Math.random() * 16));
     }
 
+    
+
 
 }

@@ -20,7 +20,7 @@ public class environment
 
 
         //getCarnivore(field, 10);
-        Carnivore[] c_array = new Carnivore[3];
+        Carnivore[] c_array = new Carnivore[20];
         getCarnivore(field, c_array);
 
 
@@ -63,17 +63,22 @@ public class environment
         System.out.println();
 
         //test movement here
-        c_array[1].move(field);
+
+        // for(int i=0; i<c_array.length; i++)
+        // {
+        //     System.out.println(i + " Located at " + c_array[i].getX() +  " " + c_array[i].getY() + " " + c_array[i].getLocation());
+        // }
+
 
         //print the field to see result again
-        for(int i=0; i<16; i++)
-        {
-            for(int j=0; j<16; j++)
-            {
-                System.out.print(field[i][j] + " ");
-            }
-            System.out.println();
-        }
+        // for(int i=0; i<16; i++)
+        // {
+        //     for(int j=0; j<16; j++)
+        //     {
+        //         System.out.print(field[i][j] + " ");
+        //     }
+        //     System.out.println();
+        // }
 
 
     }
@@ -84,18 +89,20 @@ public class environment
     public static void getCarnivore(char[][] matrix, Carnivore[] carnivores)
     {
 
+        int x_cord;
+        int y_cord;
+
         for(int i=0; i<carnivores.length; i++)
         {
             carnivores[i] = new Carnivore();
-            int x_cord = carnivores[i].getX();
-            int y_cord = carnivores[i].getY();
+            x_cord = carnivores[i].getX();
+            y_cord = carnivores[i].getY();
 
             //while loop, to prevent overlapping
             while(matrix[x_cord][y_cord] != '.')
             {
                 x_cord = carnivores[i].getX();
                 y_cord = carnivores[i].getY();
-
             }
 
             //place only empty place
