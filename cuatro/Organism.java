@@ -19,26 +19,3 @@ public class Organism
 
 
 }
-
-/*
-
-  switch statementt synthax
-  switch (value)
-  {
-    case 1;
-
-
-    break;
-
-    default:
-
-    break;
-
-
-
-  }
-
-
-
-
-*/

@@ -17,7 +17,7 @@ public class Carnivore extends Organism
     }
 
     //new value for x
-    public int createX()
+    public int changeX()
     {
         return this.x_cord = get_rand();
     }
@@ -27,7 +27,7 @@ public class Carnivore extends Organism
         return y_cord;
     }
 
-    public int createY()
+    public int changeY()
     {
         return this.y_cord = get_rand();
     }
@@ -41,97 +41,31 @@ public class Carnivore extends Organism
     //create a radius
     public void move(char[][] matrix)
     {
+        //System.out.println("Element located at " + this.x_cord + " " + this.y_cord);
         //clear current space
         matrix[this.x_cord][this.y_cord] = '.';
 
-        //reposition symbol
-        this.y_cord = this.y_cord + 1;
+        //incr or decr of 1
+        int addx = (int)(Math.random()*4 -2 );
+        int addy = (int)(Math.random()*4 -2 );
+
+        this.x_cord = this.x_cord + addx;
+        this.y_cord = this.y_cord + addy;
+
+        //can move or stay in the same place
+        while( !((this.x_cord > 0 && this.x_cord < 15) && (this.y_cord > 0 && this.y_cord < 15)) )
+        {
+
+            addx = (int)(Math.random()*4 -2 );
+            addy = (int)(Math.random()*4 -2 );
+
+            this.x_cord = this.x_cord + addx;
+            this.y_cord = this.y_cord + addy;
+        }
+
+        //now reposition
         matrix[this.x_cord][this.y_cord] = getSymbol();
     }
-
-    //find location on a 3x3 grid and then move from there
-    public int getLocation()
-    {
-        //works for the most part
-        //sometimes the program doesn't run for some weird reason I can't figure out
-
-        //starts at 0, then narrows down
-        int location = 0;
-
-        //start at the edges
-        //if an extreme case, will fall unedr other if statements
-
-        //positions
-        // | 1 || 2 || 3 |
-        // | 8 || 0 || 4 |
-        // | 7 || 6 || 5 |
-
-        //returns 0, if nothing hits, it can move anywhere
-
-        //left side
-        if(this.y_cord == 0)
-        {
-            location = 8;
-        }
-
-        //right side
-        if(this.y_cord == 15)
-        {
-            location = 4;
-        }
-
-        //top edge, x = 0
-        if(this.x_cord == 0)
-        {
-            location = 2;
-
-            //check for two corner cases
-            //top left corner
-            if(this.y_cord == 0)
-            {
-                location = 1;
-            }
-
-            //top right
-            if(this.y_cord == 15)
-            {
-                location = 3;
-            }
-        }
-
-        //bottom, x = 15
-        if(this.x_cord == 15)
-        {
-            location = 6;
-
-            //check for lower corner cases
-            //bottom left corner
-            if(this.y_cord == 0)
-            {
-                location = 7;
-            }
-
-            //bottom right corner
-            if(this.y_cord == 15)
-            {
-                location = 5;
-            }
-        }
-
-        return location;
-    }
-
-    //move based on location
-    public void move(char[][] matrix, int position)
-    {
-        
-
-
-    }
-
-
-
-
 
 
 
