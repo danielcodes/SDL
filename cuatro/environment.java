@@ -19,8 +19,7 @@ public class environment
         }
 
 
-        //getCarnivore(field, 10);
-        Carnivore[] c_array = new Carnivore[20];
+        Carnivore[] c_array = new Carnivore[10];
         getCarnivore(field, c_array);
 
 
@@ -64,10 +63,10 @@ public class environment
 
         //test movement here
 
-        // for(int i=0; i<c_array.length; i++)
-        // {
-        //     System.out.println(i + " Located at " + c_array[i].getX() +  " " + c_array[i].getY() + " " + c_array[i].getLocation());
-        // }
+        for(int i=0; i<c_array.length; i++)
+        {
+            System.out.println(i + " Located at " + c_array[i].getX() +  " " + c_array[i].getY() + " " + c_array[i].getLocation());
+        }
 
 
         //print the field to see result again
@@ -101,8 +100,8 @@ public class environment
             //while loop, to prevent overlapping
             while(matrix[x_cord][y_cord] != '.')
             {
-                x_cord = carnivores[i].getX();
-                y_cord = carnivores[i].getY();
+                x_cord = carnivores[i].createX();
+                y_cord = carnivores[i].createY();
             }
 
             //place only empty place

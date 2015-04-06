@@ -16,9 +16,20 @@ public class Carnivore extends Organism
         return x_cord;
     }
 
+    //new value for x
+    public int createX()
+    {
+        return this.x_cord = get_rand();
+    }
+
     public int getY()
     {
         return y_cord;
+    }
+
+    public int createY()
+    {
+        return this.y_cord = get_rand();
     }
 
     public char getSymbol()
@@ -108,7 +119,20 @@ public class Carnivore extends Organism
         }
 
         return location;
+    }
+
+    //move based on location
+    public void move(char[][] matrix, int position)
+    {
+        
+
 
     }
+
+
+
+
+
+
 
 }
