@@ -49,24 +49,20 @@ public class Carnivore extends Organism
         int addx = (int)(Math.random()*4 -2 );
         int addy = (int)(Math.random()*4 -2 );
 
-        this.x_cord = this.x_cord + addx;
-        this.y_cord = this.y_cord + addy;
-
         //can move or stay in the same place
-        while( !((this.x_cord > 0 && this.x_cord < 15) && (this.y_cord > 0 && this.y_cord < 15)) )
+        while( !((this.x_cord+addx > 0 && this.x_cord+addx < 32) && (this.y_cord+addy > 0 && this.y_cord+addy < 32)) )
         {
 
             addx = (int)(Math.random()*4 -2 );
             addy = (int)(Math.random()*4 -2 );
-
-            this.x_cord = this.x_cord + addx;
-            this.y_cord = this.y_cord + addy;
         }
+
+        this.x_cord = this.x_cord + addx;
+        this.y_cord = this.y_cord + addy;
 
         //now reposition
         matrix[this.x_cord][this.y_cord] = getSymbol();
+
     }
-
-
 
 }
