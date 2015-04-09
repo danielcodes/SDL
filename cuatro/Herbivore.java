@@ -8,6 +8,8 @@ public class Herbivore extends Organism
     {
         this.x_cord = get_rand();
         this.y_cord = get_rand();
+        this.energy = 20;
+        
     }
 
     //get coordinates for an object

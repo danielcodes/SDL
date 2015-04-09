@@ -13,8 +13,8 @@ until they come within a certain radius of food, based on their energy they eat
 -put 30 iterations of the life cygle
 
 ISSUS TO TAKE CARE OF
--putting objects randomnly in the grid
--create a "grass" default
+-From location, find range of movement
+-check select locations, eat if possible, otherwise stick to simple ol' move
 
 
 locate function, just in case, for later

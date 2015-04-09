@@ -8,7 +8,7 @@ public class Organism
     //methods
     public Organism()
     {
-
+        this.age = 10;
     }
 
     //to create positioning
