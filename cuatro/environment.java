@@ -58,6 +58,9 @@ public class environment
 
             c_array[0].moveTo(field, k);
             c_array[0].rePosition(field);
+            int dumb = c_array[0].getLocation();
+            
+
 
             //print the field to see result again
             for(int i=0; i<10; i++)
