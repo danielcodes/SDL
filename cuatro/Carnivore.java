@@ -66,4 +66,84 @@ public class Carnivore extends Organism
 
     }
 
+    public void moveTo (char[][] matrix, int location)
+    {
+      //also have to clear previous spot
+      matrix[this.x_cord][this.y_cord] = '.';
+
+      //number will range from 1 - 8 (possible moves)
+      switch (location)
+      {
+          case 1:
+          System.out.println("UNO");
+          this.x_cord = this.x_cord - 1;
+          this.y_cord = this.y_cord - 1;
+          System.out.println("The new coordinates are: " + this.x_cord + " " + this.y_cord);
+
+          break;
+
+          case 2:
+          System.out.println("DOS");
+          this.x_cord = this.x_cord - 1;
+          System.out.println("The new coordinates are: " + this.x_cord + " " + this.y_cord);
+
+          break;
+
+          case 3:
+          System.out.println("TRES");
+          this.x_cord = this.x_cord - 1;
+          this.y_cord = this.y_cord + 1;
+          System.out.println("The new coordinates are: " + this.x_cord + " " + this.y_cord);
+
+          break;
+
+          case 4:
+          System.out.println("CUATRO");
+          this.y_cord = this.y_cord - 1;
+          System.out.println("The new coordinates are: " + this.x_cord + " " + this.y_cord);
+
+          break;
+
+          case 5:
+          System.out.println("CINCO");
+          this.y_cord = this.y_cord + 1;
+          System.out.println("The new coordinates are: " + this.x_cord + " " + this.y_cord);
+
+          break;
+
+          case 6:
+          System.out.println("SEIS");
+          this.x_cord = this.x_cord + 1;
+          this.y_cord = this.y_cord - 1;
+          System.out.println("The new coordinates are: " + this.x_cord + " " + this.y_cord);
+
+          break;
+
+          case 7:
+          System.out.println("SIETE");
+          this.x_cord = this.x_cord + 1;
+          System.out.println("The new coordinates are: " + this.x_cord + " " + this.y_cord);
+
+          break;
+
+          case 8:
+          System.out.println("OCHO");
+          this.x_cord = this.x_cord + 1;
+          this.y_cord = this.y_cord + 1;
+          System.out.println("The new coordinates are: " + this.x_cord + " " + this.y_cord);
+
+          break;
+
+          default:
+          System.out.println("NINGUN");
+          break;
+      }
+
+    }
+
+    //this should be called after moveTo()
+    public void rePosition (char[][] matrix)
+    {
+        matrix[this.x_cord][this.y_cord] = getSymbol();
+    }
 }

@@ -12,3 +12,6 @@ example, if a plant is in range, the herbivore should eat it
 -have a switch for the all possible movements
 -restrict movement by finding the object's location on the grid
 -now implement
+
+-messing with the grid, remember to change it back
+-in the environment file and organism (getrand)

@@ -5,33 +5,33 @@ public class environment
         System.out.println();
 
         //uninitialized chars are 0
-        char[][] field = new char[32][32];
+        char[][] field = new char[10][10];
 
         //filling the field
-        for(int i=0; i<32; i++)
+        for(int i=0; i<10; i++)
         {
-            for(int j=0; j<32; j++)
+            for(int j=0; j<10; j++)
             {
                 field[i][j] = '.'; //dots are grass
             }
         }
 
         //create objects and place them in the grid
-        Carnivore[] c_array = new Carnivore[100];
+        Carnivore[] c_array = new Carnivore[1];
         getCarnivore(field, c_array);
 
-        Herbivore[] h_array = new Herbivore[100];
-        getHerbivore(field, h_array);
-
-        Plant[] p_array = new Plant[100];
-        getPlant(field, p_array);
+        // Herbivore[] h_array = new Herbivore[10];
+        // getHerbivore(field, h_array);
+        //
+        // Plant[] p_array = new Plant[10];
+        // getPlant(field, p_array);
 
         //print the field to see result
         //this is after C's, H's and P's have been placed in the 2D field
         System.out.println("SPAWN ALL THE OBJECTS: ");
-        for(int i=0; i<32; i++)
+        for(int i=0; i<10; i++)
         {
-            for(int j=0; j<32; j++)
+            for(int j=0; j<10; j++)
             {
                 System.out.print(field[i][j] + " ");
             }
@@ -42,24 +42,27 @@ public class environment
 
 
         //iterate here
-        for(int k=1; k<=30; k++)
+        for(int k=1; k<=8; k++)
         {
             System.out.println("Iteration #" + k);
             //movement here
-            for(int a=0; a<c_array.length; a++)
-            {
-                c_array[a].move(field);
-            }
+            // for(int a=0; a<c_array.length; a++)
+            // {
+            //     c_array[a].move(field);
+            // }
+            //
+            // for(int b=0; b<h_array.length; b++)
+            // {
+            //     h_array[b].move(field);
+            // }
 
-            for(int b=0; b<h_array.length; b++)
-            {
-                h_array[b].move(field);
-            }
+            c_array[0].moveTo(field, k);
+            c_array[0].rePosition(field);
 
             //print the field to see result again
-            for(int i=0; i<32; i++)
+            for(int i=0; i<10; i++)
             {
-                for(int j=0; j<32; j++)
+                for(int j=0; j<10; j++)
                 {
                     System.out.print(field[i][j] + " ");
                 }
