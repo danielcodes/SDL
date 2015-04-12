@@ -231,23 +231,74 @@ public class Carnivore extends Organism
         // | 8 || 0 || 4 | --------------- | 4 || 0 || 5 |
         // | 7 || 6 || 5 | --------------- | 6 || 7 || 8 |
 
+        //array to be returned
+        int[] output;
+
         switch (location)
         {
-            case 1:
+            //9 cases, for all locations in grid
+            //center, can go anywhere
+            case 0:
+            output = new int[8];
+            output = {1, 2, 3, 4, 5, 6, 7, 8};
             break;
-            
 
+            //top left corner
+            case 1:
+            output = new int[3];
+            output = {5, 7, 8};
+            break;
 
+            //top middle
+            case 2:
+            output = new int[5];
+            output = {4, 5, 6, 7, 8};
+            break;
+
+            //top right corner
+            case 3:
+            output = new int[3];
+            output = {4, 6, 7};
+            break;
+
+            //middle right
+            case 4:
+            output = new int[5];
+            output = {1, 2, 4, 6, 7};
+            break;
+
+            //lower right corner
+            case 5:
+            output = new int[3];
+            output = {1, 2, 4};
+            break;
+
+            //lower middle
+            case 6:
+            output = new int[5];
+            output = {1, 2, 3, 4, 5};
+            break;
+
+            //lower left corner
+            case 7:
+            output = new int[3];
+            output = {2, 3, 5};
+            break;
+
+            //left middle
+            case 8:
+            output = new int[8];
+            output = {2, 3, 5, 7, 8};
+            break;
+
+            //can probably remove this
+            //it should not hit the default
             default:
             break;
 
         }
 
-
-
-
-
-
+        return output;
 
     }
 
