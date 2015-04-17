@@ -7,6 +7,8 @@ public class test
         x = 0;
         y = 0;
 
+
+        /*
         for(int i=1; i<=1; i++)
         {
             x = 1;
@@ -14,9 +16,21 @@ public class test
             move(i, x, y);
             System.out.println("The new coordinates are: " + x + " " + y);
         }
-        //System.out.println("The new coordinates are: " + x + " " + y);
+        */
 
-        //how to toggle the switch
+        int[] dummy = {1,2,3};
+        // dummy = new int[3];
+        //dummy = {1,2,3};
+
+        System.out.println(dummy.length);
+        for (int i=0; i<dummy.length; i++)
+        {
+            System.out.println(dummy[i]);
+        }
+
+
+
+
     }
 
     public static void move (int place, int x, int y)
