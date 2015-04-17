@@ -1,0 +1,74 @@
+RUN THE DAY OR LET THE DAY RUN YOU
+
+Creating a GUI
+Using the JFrame class
+-size it
+-exit when closed
+-resizability
+
+adding content
+-use a Container object, getContentPane();
+-can display the buttons in a compass manner
+-can change overall layout
+
+
+
+Event-driven programming
+-adapters and listeners
+-Listener is a new interface
+
+Ok and cancel buttons that print out a message
+
+
+layouts
+FlowLayout
+gridLayout
+
+LAST WEEK OF MARCH **********************************************
+
+different ways to call an event
+-can change depending on the language level, DOWNLOAD IDE
+
+Mouse listener, many fuctions, an interface
+Mouse adapter, an abstract class, can't create objects
+Abstract and concrete classes, object creation
+
+FINAL IN JAVA, DIFFERENT FROM C++
+final Car c;
+c = new Car();
+c = new Car();
+
+once initialized, the pointer cannot point to new object
+
+const in c++
+
+ABSTRACT CLASSE
+no need to create an object of a class that has "no usage"
+it is too general, we can use it as a superclass and derive subclasses from it
+
+
+IMPORTANT
+NETWORK
+-bit manipulation
+OOP
+-object oriented design
+-think about scalability
+-interfaces, abstract classes, polymorphism
+
+
+FOR MIDTERM
+BIT MANIP
+STATCI FIELD, METHOD
+PRIVATE METHOD, PUBLIC METHOD
+NAMING FINAL FIELDS, DEFINING IT
+CLASSES NAD INTERFACES, ABSTRACT AND CONCRETE
+WHAT IS AN OBJECT
+STRING MANIPULATION AND ADDIOT
+SIZE OF VARIABLE, PRIMITIVE TYPES
+OVERRDING METHODS
+OVERLOADING AND OVERRIDING
+SUPERCLASSES AND SUBCLASSES, CASTING
+GETTING INPUT ROM JOPTION PANE
+DOCUMENTATION
+NAMING
+DIFFERENCES BETWEEN C++ AND JAVA
