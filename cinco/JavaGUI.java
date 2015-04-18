@@ -32,7 +32,7 @@ public class JavaGUI extends JFrame
         JButton divbutton = new JButton("/");
 
 
-        //sub button is on top of ok button
+        //add button
         contentPane.add(addbutton);
         addbutton.addActionListener(new ActionListener() {
             @Override
@@ -44,8 +44,7 @@ public class JavaGUI extends JFrame
             }
         });
 
-
-
+        //sub button
         contentPane.add(subbutton);
         subbutton.addActionListener(new ActionListener() {
             @Override
@@ -53,6 +52,30 @@ public class JavaGUI extends JFrame
                 double number1 = Double.parseDouble(num1.getText());
                 double number2 = Double.parseDouble(num2.getText());
                 JOptionPane.showMessageDialog(null, "The result of subtraction is : " + (number1 - number2));
+
+            }
+        });
+
+        //multiply button
+        contentPane.add(mulbutton);
+        mulbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                double number1 = Double.parseDouble(num1.getText());
+                double number2 = Double.parseDouble(num2.getText());
+                JOptionPane.showMessageDialog(null, "The result of multiplication is : " + (number1 * number2));
+
+            }
+        });
+
+        //divide button
+        contentPane.add(divbutton);
+        divbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                double number1 = Double.parseDouble(num1.getText());
+                double number2 = Double.parseDouble(num2.getText());
+                JOptionPane.showMessageDialog(null, "The result of division is : " + (number1 / number2));
 
             }
         });
