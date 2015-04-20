@@ -33,7 +33,7 @@ public class cal extends JFrame implements ActionListener
     Dimension displayDim = new Dimension(width[0], height[0]);
     Dimension regularDim = new Dimension(width[1], height[1]);
 
-    //for operations
+    //for operations, +, -, x, /
     boolean[] operation = new boolean[4];
 
     //for results
@@ -130,8 +130,43 @@ public class cal extends JFrame implements ActionListener
         setVisible(true);
     }
 
-    public final void setDesign() {
+    //clears display
+    public void clear() {
+        try
+        {
+            display.setText("");
+            for(int i = 0; i < 4; i++)
+                operation[i] = false;
+            for(int i = 0; i < 2; i++)
+                temp[i] = 0;
+        } catch (NullPointerException e) {}
+    }
 
+    public void getResult()
+    {
+        double result = 0; //result
+        temp[1] = Double.parseDouble(display.getText()); //second operand
+
+        try
+        {
+            if(operation[2] == true)  //multiplication
+                result = temp[0] * temp[1];
+            else if(operation[3] == true)  //divison
+                result = temp[0] / temp[1];
+            else if(operation[0] == true) //addition
+                result = temp[0] + temp[1];
+            else if(operation[1] == true) //subtraction
+                result = temp[0] - temp[1];
+            display.setText(Double.toString(result)); //display now has result
+            for(int i = 0; i < 4; i++)
+                operation[i] = false; //set all the functions back to false
+        } catch(NumberFormatException e) {}
+    }
+
+
+
+    public final void setDesign()
+    {
         try
         {
             UIManager.setLookAndFeel(
@@ -140,15 +175,78 @@ public class cal extends JFrame implements ActionListener
         catch(Exception e) {}
     }
 
-    public void actionPerformed(ActionEvent ae) {
+    public void actionPerformed(ActionEvent event)
+    {
+        //adding functionality to the buttons in order
+        //****************REPEATED CODE*********************
+        if(event.getSource() == button[0])
+            display.append("7");
+        if(event.getSource() == button[1])
+            display.append("8");
+        if(event.getSource() == button[2])
+            display.append("9");
+        if(event.getSource() == button[3])
+        {
+            //division
+            temp[0] = Double.parseDouble(display.getText());
+            operation[3] = true;
+            display.setText("");
+        }
+        //**************************************************
 
+        //****************REPEATED CODE*********************
+        if(event.getSource() == button[5])
+            display.append("4");
+        if(event.getSource() == button[6])
+            display.append("5");
+        if(event.getSource() == button[7])
+            display.append("6");
+        if(event.getSource() == button[8])
+        {
+            //multiplication
+            temp[0] = Double.parseDouble(display.getText());
+            operation[2] = true;
+            display.setText("");
+        }
+        //**************************************************
+
+        //****************REPEATED CODE*********************
+        if(event.getSource() == button[10])
+            display.append("1");
+        if(event.getSource() == button[11])
+            display.append("2");
+        if(event.getSource() == button[12])
+            display.append("3");
+        if(event.getSource() == button[13])
+        {
+            //subtraction
+            temp[0] = Double.parseDouble(display.getText());
+            operation[1] = true;
+            display.setText("");
+        }
+        //**************************************************
+
+        //****************REPEATED CODE*********************
+        if(event.getSource() == button[15])
+            display.append(".");
+        if(event.getSource() == button[16])
+            display.append("0");
+        if(event.getSource() == button[18])
+        {
+            //addition
+            temp[0] = Double.parseDouble(display.getText());
+            operation[0] = true;
+            display.setText("");
+        }
+        //**************************************************
+
+        //= button
+        if(event.getSource() == button[17])
+            getResult();
+        //clear
+        if(event.getSource() == button[20])
+            clear();
     }
-
-
-
-
-
-
 
 
     public static void main (String[] args)
