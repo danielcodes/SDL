@@ -36,8 +36,9 @@ public class cal extends JFrame implements ActionListener
     //for operations, +, -, x, /
     boolean[] operation = new boolean[4];
 
-    //for results
+    //for results and memory
     double[] temp = {0, 0};
+    double memory;
 
     //display, parameters?
     JTextArea display = new JTextArea(1,20);
@@ -128,6 +129,11 @@ public class cal extends JFrame implements ActionListener
         add(row[5]);
 
         setVisible(true);
+    }
+
+    public void setMemory(double number)
+    {
+        memory += number;
     }
 
     //clears display
@@ -238,6 +244,25 @@ public class cal extends JFrame implements ActionListener
             operation[0] = true;
             display.setText("");
         }
+        //**************************************************
+
+        //memory functions, MC, MR, M+ and M-
+        //******************MEMORY CODE*********************
+        //memory clear
+        if(event.getSource() == button[4])
+            memory = 0;
+
+        //memory recall
+        if(event.getSource() == button[9])
+            display.setText(Double.toString(memory));
+
+        //memory add
+        if(event.getSource() == button[14])
+            memory += Double.parseDouble(display.getText());
+
+        //memory subtract
+        if(event.getSource() == button[19])
+            memory -= Double.parseDouble(display.getText());
         //**************************************************
 
         //= button
