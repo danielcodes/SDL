@@ -18,6 +18,6 @@ things that need to be put back in place
 
 PROGRESS SO FAR
 
-![Spawn]((https://raw.githubusercontent.com/danielcodes/SDL/master/docs/img/spawn.PNG "Spawn"))
+![Spawn](https://raw.githubusercontent.com/danielcodes/SDL/master/docs/img/spawn.PNG)
 
-![Iteration-1]((https://raw.githubusercontent.com/danielcodes/SDL/master/docs/img/iter1.PNG "Iteration-1"))
+![Iteration-1](https://raw.githubusercontent.com/danielcodes/SDL/master/docs/img/iter1.PNG)
