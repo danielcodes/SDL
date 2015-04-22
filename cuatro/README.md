@@ -14,3 +14,10 @@ the function that returns an array, bug with implementation
 things that need to be put back in place
 -messing with the grid, remember to change it back
 -in the environment file and organism (getrand)
+
+
+PROGRESS SO FAR
+
+![Spawn]((https://raw.githubusercontent.com/danielcodes/SDL/master/docs/img/spawn.PNG "Spawn"))
+
+![Iteration-1]((https://raw.githubusercontent.com/danielcodes/SDL/master/docs/img/iter1.PNG "Iteration-1"))
