@@ -1,0 +1,27 @@
+NOTES ON JAVA GUI TUTORIAL
+
+-usage of JOptionPana
+-keyword, Abstract Window Toolkit (AWT)
+-heavyweight (awt) and lightweight (swing), no idea
+-class Component->Container->JComponent
+-JComp is the superclass of all lightweight Swing components
+-instances of JFrame from java.awt.Window
+-gives title bar, min, max and close window
+--go back to slide 39 for jlabel usage, will be needed
+-string argument for JFrame gives window title
+->attache each component to jframe
+
+Use of layouts to place components in a container
+-from left to right
+-setlayout from class Container
+-jlabel's appearance can be changed through methods
+
+EVENT HANDLING
+-class to represent event handler
+-event-listener interface
+-registering the event handler
+
+-inner classe for event handling
+-must implement actionlistener interface and override actionPerformed
+
+--left off at slide 75
