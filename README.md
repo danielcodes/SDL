@@ -1,15 +1,16 @@
 # SDL
 
-Programming assignments for my Software Design Lab class
-
-Numero Uno
+###One
 -Print your name?
 
-Numero Dos
--First 10 Fibonacci numbers, simple if else control flow, and a while loop
+###Two
+First 10 Fibonacci numbers, simple if else control flow, and a while loop
 
-Numero Tres
--Some bit manipulation
+###Three
+Some bit manipulation
 
-Numero Cuatro
--Creating a virtual environment, dealing with class interaction mostly
+###Four
+Creating a virtual environment, dealing with class interaction mostly
+
+###Final
+Create a simple Information Management System with a GUI and some functionality
