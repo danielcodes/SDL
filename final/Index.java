@@ -2,16 +2,25 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Index extends JFrame
 {
-    private final GridBagLayout layout;
-    private final GridBagConstraints constraints;
+    private GridBagLayout layout;
+    private GridBagConstraints constraints;
 
 
     public Index()
     {
         super("Main Page");
+        initMain();
+
+    }
+
+    //a different method to initiate the main components (2)
+    private void initMain()
+    {
         layout = new GridBagLayout();
         setLayout(layout);
         constraints = new GridBagConstraints();
@@ -24,13 +33,24 @@ public class Index extends JFrame
         addComponent(title, 1, 1, 5, 1);
 
         JButton addToDB = new JButton("Add to Database");
+        //button functionality here
+        addToDB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event)
+            {
+                Form form = new Form();
+                form.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                form.setVisible(true);
+                setVisible(false);
+            }
+        });
         addComponent(addToDB, 2, 2, 1, 5);
+
 
         JButton seeDB = new JButton("See Database");
         addComponent(seeDB, 3, 3, 1, 5);
-
-
     }
+
 
     //method to set constraints
     //5 parameters, comp, row, col, width, height
