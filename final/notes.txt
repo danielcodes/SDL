@@ -25,3 +25,23 @@ EVENT HANDLING
 -must implement actionlistener interface and override actionPerformed
 
 --left off at slide 75
+
+-listener list?
+-several event-listener interfaces. ie. mouseevent handled by mouselistener
+
+Buttons
+-mostly perform actions
+-might use toggle button to differentiate between student and faculty
+
+slide 139 for mouseevents
+
+Layout manager @ 188
+usually need a container to place things in, with method getContentPane()
+
+Gridlayout
+4 param when row, col, and gaps
+
+more complex GUIs
+JPanel -> JComponent -> Container
+
+GridBagLayout
