@@ -13,14 +13,15 @@ public class DSStudent
     public void write() {
         try {
             FileOutputStream dataBase = new FileOutputStream("database.csv", true);
-            String writeString = boStudent.getInits() + ", " +
-                    boStudent.getLastName() + ", " +
-                    boStudent.getFirstName() + "\n";
+            String writeString = boStudent.toString();
             dataBase.write(writeString.getBytes());
         }catch (IOException e)
         {
             e.printStackTrace();
         }
     }
+
+    
+
 
 }

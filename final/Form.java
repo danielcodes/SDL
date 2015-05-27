@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 public class Form extends JFrame
 {
+    private Database db;
 
     public Form()
     {
@@ -149,14 +150,31 @@ public class Form extends JFrame
         constraints.gridwidth = 6;
         constraints.gridheight = 1;
 
-        JButton insertB = new JButton("Insert");
+        //initiate db here *****************************************************
+        db = new Database();
+
+        JButton insertB = new JButton("Insert to file and DB");
         insertB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                BOStudent std = new BOStudent(firstNameT.getText(),
-                        lastNameT.getText());
+                //expand the grabbing of text
+                BOStudent std = new BOStudent( firstNameT.getText(),
+                        lastNameT.getText(), jobT.getText(), majorT.getText(), ageT.getText() );
                         std.write();
+
+                        //can pack a bit more functionality
+                        //everytime a person is added, a table is created
+                        //as more people get added, it gets updated
+
+                        db.setVisible( true );
+                        //db.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        db.addToDatabase( firstNameT.getText(),
+                                lastNameT.getText(), jobT.getText(), majorT.getText(), ageT.getText() );
+                        db.invalidate();
+                        db.validate();
+                        db.repaint();
             }
+            
         });
         layout.setConstraints(insertB, constraints);
         contentPane.add(insertB);
